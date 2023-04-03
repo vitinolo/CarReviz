@@ -4,23 +4,30 @@ const carSchema = mongoose.Schema(
     {
         make: {
             type: String,
-            required: true,
+            required: false,
         },
         model: {
             type: String,Number,
-            required: true,
+            required: false,
         },
         year: {
             type: Number,
-            required: true,
+            required: false,
         },
-        repairs: {
+        numberplate: {
             type: String,
             required: true,
         },
+        repairs: {
+            type: [String],
+        },
+        nextrevision: {
+            type: String,
+            required: false,
+        },
     },
     {
-        timestamps: false,
+        timestamps: true
     }
 );
 
