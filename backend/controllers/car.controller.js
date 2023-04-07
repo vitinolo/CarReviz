@@ -11,9 +11,9 @@ module.exports.setCars = async (req, res) => {
         year: req.body.year,
         numberplate: req.body.numberplate,
         repairs: req.body.repairs,
-        nextrevision: req.body.nextrevision,
+        ctdate: req.body.ctdate,
     })
-    res.status(201).json( car); 
+    res.status(201).json(car); 
 };
 //voir tous les véhicules
 module.exports.getCars = async (req, res) => {

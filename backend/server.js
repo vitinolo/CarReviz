@@ -28,6 +28,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/car", require("./routes/car.routes"));
 app.use("/user", require("./routes/user.routes"));
 
-
 //lancer le serveur
 app.listen(port, () => console.log("le serveur à démarré au port " + port))
