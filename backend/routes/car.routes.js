@@ -7,6 +7,6 @@ router.get("/", getCars);
 router.get("/:id", getOneCar);
 router.put("/:id", editCar);
 router.delete("/:id", deleteCar);
-router.patch("/repair-car/:id", repairsCar);
+router.patch("/:id/repairs", repairsCar);
 
 module.exports = router
