@@ -45,6 +45,7 @@ User.findOne({ email: req.body.email })
     })
     .catch((error) => res.status(500).json({ error }));
 };
+
 //voir toutes les users
 module.exports.getAllUser = (req, res, next) => {
     User.find()
@@ -55,6 +56,7 @@ module.exports.getAllUser = (req, res, next) => {
         res.status(400).json({ error });
       });
 };
+
 //sélection d'un user
 module.exports.getOneUser = (req, res, next) => {
     User.findOne({ _id: req.params.id })

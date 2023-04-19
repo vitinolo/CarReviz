@@ -9,18 +9,20 @@ module.exports.setCars = async (req, res) => {
         user: req.body.userId,
         make: req.body.make,
         model: req.body.model,
-        year: req.body.year,
+        release: req.body.release,
         numberplate: req.body.numberplate,
         repairs: req.body.repairs,
         ctdate: req.body.ctdate,
     })
     res.status(201).json(car); 
 };
+
 //voir tous les véhicules
 module.exports.getCars = async (req, res) => {
   const cars = await CarModel.find();
   res.status(200).json(cars); 
 };
+
 //voir un véhicule en particulier
 module.exports.getOneCar = async(req, res, next) => {
     CarModel.findOne({ _id: req.params.id })
@@ -31,7 +33,8 @@ module.exports.getOneCar = async(req, res, next) => {
         res.status(404).json({ error });
       });
   };
-  //modifier fiche d'un véhicule
+
+//modifier fiche d'un véhicule
 module.exports.editCar = async (req, res) => {
     const car = await CarModel.findById(req.params.id)
     if(!car) {
@@ -44,6 +47,7 @@ module.exports.editCar = async (req, res) => {
     )
     res.status(200).json(updateCar);
 };
+
 //supprimer la fiche d'un véhicule
 module.exports.deleteCar = async (req,res) => {
     const car = await CarModel.findById(req.params.id)
